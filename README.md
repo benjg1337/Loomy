@@ -41,3 +41,7 @@ This tool will enumerate through directories within linux file structures within
 ## Use Cases
 
 Loomy is the ideal tool for scraping through the complexities of a Unix file system with ease. Ideal for post security alert IR, generic troubleshooting or for learning purposes. 
+
+## License 
+
+As can be seen in the License.md file above, Loomy operates under the [MIT](https://opensource.org/license/mit) open source license. 
