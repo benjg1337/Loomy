@@ -45,70 +45,10 @@ head -n 200 /var/log/apt/history.log 2>/dev/null | grep -oP 'Commandline: \K.*' 
 # show all running Docker and Podman containers 
 (command -v docker &>/dev/null && docker ps) || (command -v podman &>/dev/null && podman ps)
 
-#Results with nice formatting
-echo "====================================="
-echo "System Uptime:"
-echo "====================================="
-echo "$uptime_output"
-echo
-echo "====================================="
-echo "Scheduled Tasks (Crontab):"
-echo "====================================="
-echo "$crontab_output"
-echo
-echo
-# Print the captured output
-echo "Active Network Connections:"
-echo "====================================="
-echo "$netstat_output"
-echo
-echo
-# Print formatted output
-echo "System Information:"
-echo "====================================="
-echo "Kernel Version:    $kernel_version"
-echo "Operating System:  $os_version"
-echo "Memory Total:      $mem_total"
-echo
-echo
-# Print the list of logged-in users
-echo "Currently Logged-In Users:"
-echo "====================================="
-echo "$who_output"
-echo
-echo
-# Print logged in users within the last 7 days
-echo "===================================================="
-echo "Users Logged In Within the Last 7 Days:"
-echo "===================================================="
-echo
-echo
 #Print if there are any logins
 if [ -z "$logins" ]; then
     echo "No users have logged in within the last 7 days."
 else
     echo "$logins"
 fi
-echo "===================================================="
-echo
-echo
-# Print logged in users via SSH
-echo "Users Logged In via SSH:"
-echo "===================================================="
-echo "$ssh_logins"
-echo "===================================================="
-echo
-echo
-# Print failed logged in users via SSH
-echo "===================================================="
-echo "Failed logins via SSH"
-echo "===================================================="
-echo "$ssh_failed_logins"
-echo "===================================================="
-echo
-echo
-# Print the captured history output
-echo "Last 50 Lines of Bash History:"
-echo "=============================="
-echo "$history_output"
-echo
+
