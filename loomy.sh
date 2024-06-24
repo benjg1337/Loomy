@@ -96,6 +96,7 @@ show_crontab() {
 }
 
 netstat_output() {
+    clear
     netstat -tulpn
     read -p "Press [Enter] key to return to main menu..."
 }
