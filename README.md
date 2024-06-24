@@ -12,4 +12,8 @@ Linux IR tool that illuminates that way weary cyber security analysts.
 
 Loomy is a command-line tool designed for cyber security incident response tasks. It provides various utilities to gather system information and monitor activities.
 
+## Install Guide
+Either Git clone the above build.sh file, or manually clone the entire repository into the directory of your choosing. 
+Proceed to ./build.sh which will clone and chmod the script for you, or do the steps manually.
 ## Menu Options
+
