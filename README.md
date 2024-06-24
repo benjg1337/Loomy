@@ -36,3 +36,5 @@ Run the following command for easy install ideally within /Opt, or manually down
 | Option 14     | Escape clause |
 
 ## Use Cases
+
+Loomy is the ideal tool for scraping through the complexities of a Unix file system with ease. Ideal for post security alert IR, generic troubleshooting or for learning purposes. 
