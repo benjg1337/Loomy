@@ -1,15 +1,15 @@
 #!/bin/bash
 
-# Ensure loomy.sh is executable
+# Changes file perms to execute
 chmod +x loomy.sh
 
-# Get the directory where this script resides
+# Find source directory and sends to dev null
 script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-# Determine the user's shell
+# Pulls $SHELL info
 user_shell=$(basename "$SHELL")
 
-# Add the directory containing loomy.sh to PATH if not already in PATH
+# From the above echos the location of Loomy to the path of the shell.
 if [[ ":$PATH:" != *":$script_dir:"* ]]; then
     case "$user_shell" in
         bash)
