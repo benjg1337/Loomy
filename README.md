@@ -40,7 +40,7 @@ This tool will enumerate through directories within linux file structures using 
 
 ## Use Cases
 
-Loomy is the ideal tool for scraping through the complexities of a Unix file system with ease. Ideal for post security alert IR, generic troubleshooting or for learning purposes. 
+Loomy is the ideal tool for scraping through the complexities of a Unix file system with ease. Ideal for post security alert IR, generic troubleshooting or for learning purposes. This tool aims to streamline the way we interact with core utilites within the Unix file strucutre such as journalctl, log files, dot files and permissions to create a cohesive idea of what is occuring on a Unix derived based endpoint or server.
 
 ## License 
 
