@@ -35,4 +35,4 @@ Run the following command for easy install ideally within /Opt, or manually down
 | Option 13     | Pulls the last 50 lines of history from ~/.bash_history |
 | Option 14     | Escape clause |
 
-## Usecases
+## Use Cases
