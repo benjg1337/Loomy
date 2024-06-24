@@ -39,6 +39,10 @@ ssh_logins=$(journalctl -u ssh | grep 'sshd.*Accepted password' | tail -n 20)
 # Read accepted password logins from journalctl
 ssh_failed_logins=$(journalctl -u ssh | grep 'sshd.*Failed password' | tail -n 20)
 
+# show all installed packages on Arch Debian or RHEL based distros 
+head -n 200 /var/log/apt/history.log 2>/dev/null | grep -oP 'Commandline: \K.*' ; head -n 200 /var/log/apt/yum.log 2>/dev/null | grep -oP 'Commandline: \K.*' ; head -n 200 /var/log/apt/dnf.log 2>/dev/null | grep -oP 'Commandline: \K.*' ; head -n 200 /var/log/apt/pacman.log 2>/dev/null | grep -oP 'Commandline: \K.*'
+
+
 #Results with nice formatting
 echo "====================================="
 echo "System Uptime:"
