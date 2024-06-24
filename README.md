@@ -31,7 +31,7 @@ This tool will enumerate through directories within linux file structures within
 | Option 6      | List altered files within the /Home /Opt directories in the last 7 days|
 | Option 7      | List recently installed packages |
 | Option 8      | List currenctly running Docker or Podman containers |
-| Option 9      | Creat formatted network connection capture (60 seconds) |
+| Option 9      | Create formatted network connection capture (60 seconds) |
 | Option 10     | Print out of last 7 days of local logins |
 | Option 11     | Reads through journalctl, pulls SSH logins |
 | Option 12     | Reads through journalctl, pulls failed SSH login attempts |
