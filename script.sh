@@ -34,10 +34,10 @@ logins=$(last -F -s $seven_days_ago | grep -v "^reboot" | grep -v "^wtmp" | grep
 history_output=$(tail -n 50 ~/.bash_history)
 
 # Read accepted password logins from journalctl
-ssh_logins=$(journalctl -u ssh | grep 'sshd.*Accepted password')
+ssh_logins=$(journalctl -u ssh | grep 'sshd.*Accepted password' | tail -n 20)
 
 # Read accepted password logins from journalctl
-ssh_failed_logins=$(journalctl -u ssh | grep 'sshd.*Failed password')
+ssh_failed_logins=$(journalctl -u ssh | grep 'sshd.*Failed password' | tail -n 20)
 
 #Results with nice formatting
 echo "====================================="
