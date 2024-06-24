@@ -12,19 +12,19 @@ show_ascii_art() {
 
 # Function to display the menu
 show_menu() {
-    echo "1) Option 1: Show current uptime"
+    echo "1) Option 1: Show System Information"
     echo "2) Option 2: Show Crontab (Scheduled tasks)"
     echo "3) Option 3: Current open and used ports via Netstat"
     echo "4) Option 4: Running kernel version"
     echo "5) Option 5: OS Version installed"
-    echo "6) Option 6: Memory system information"
-    echo "7) Option 7: Logged in users"
-    echo "8) Option 8: x"
-    echo "9) Option 9: x"
-    echo "10) Option 10: Last 7 days of logins"
-    echo "11) Option 11: Last 50 lines of command history"
-    echo "12) Option 12: SSH Accepted password logins"
-    echo "13) Option 13: SSH Rejected password login attempts"
+    echo "6) Option 6: Altered files in /Home & /Opt"
+    echo "7) Option 7: Recently Installed Packages"
+    echo "8) Option 8: List Running Docker/Podman containers"
+    echo "9) Option 9: Formatted packet capture (60 seconds)"
+    echo "10) Option 10: Last 7 days of local logins"
+    echo "11) Option 11: "
+    echo "12) Option 12: "
+    echo "13) Option 13: Last 20 lines of command history"
     echo "14) Option 14: Exit"
 }
 
@@ -34,7 +34,7 @@ read_input() {
     read -p "Enter choice [1-14]: " choice
     case $choice in
         1)
-            current_uptime
+            system_info
             ;;
         2)
             show_crontab
@@ -46,31 +46,31 @@ read_input() {
             kernel_version
             ;;
         5)
-            display_uptime
+            distro_version
             ;;
         6)
-            display_free_memory
+            directory_changes
             ;;
         7)
-            display_network_config
+            installed_packages
             ;;
         8)
-            display_logged_in_users
+            list_containers
             ;;
         9)
-            display_running_processes
+            network_capture
             ;;
         10)
-            display_last_boot
+            local_logins
             ;;
         11)
-            display_kernel_version
+            ssh_auths
             ;;
         12)
-            display_hostname
+            failed_ssh_auths
             ;;
         13)
-            display_current_directory
+            bash_history
             ;;
         14)
             echo "Exiting..."
@@ -83,79 +83,75 @@ read_input() {
 }
 
 # Functions for each menu option
-say_hello() {
-    echo "Hello, World!"
+system_info() {
+    uptime && grep MemTotal /proc/meminfo | awk '{print $2/1024/1024 " GB"}' 
     read -p "Press [Enter] key to return to main menu..."
 }
 
-show_date() {
-    echo "Current date and time: $(date)"
+show_crontab() {
+    crontab -l 2>&1
     read -p "Press [Enter] key to return to main menu..."
 }
 
-list_files() {
-    echo "Listing files in current directory:"
-    ls
+netstat_output() {
+    netstat -tulpn
     read -p "Press [Enter] key to return to main menu..."
 }
 
-display_disk_usage() {
-    echo "Displaying disk usage:"
-    df -h
+kernel_version() {
+    uname -r 
     read -p "Press [Enter] key to return to main menu..."
 }
 
-display_uptime() {
-    echo "Displaying system uptime:"
-    uptime
+distro_version() {
+    echo "Current distro being ran:"
+    cat /etc/*release | grep PRETTY_NAME | cut -d "=" -f 2- | tr -d '"'
     read -p "Press [Enter] key to return to main menu..."
 }
 
-display_free_memory() {
+directory_changes() {
     echo "Displaying free memory:"
     free -h
     read -p "Press [Enter] key to return to main menu..."
 }
 
-display_network_config() {
-    echo "Displaying network configuration:"
-    ifconfig
+installed_packages() {
+    head -n 200 /var/log/apt/history.log 2>/dev/null | grep -oP 'Commandline: \K.*' ; head -n 200 /var/log/apt/yum.log 2>/dev/null | grep -oP 'Commandline: \K.*' ; head -n 200 /var/log/apt/dnf.log 2>/dev/null | grep -oP 'Commandline: \K.*' ; head -n 200 /var/log/apt/pacman.log 2>/dev/null | grep -oP 'Commandline: \K.*'
     read -p "Press [Enter] key to return to main menu..."
 }
 
-display_logged_in_users() {
+list_containers() {
     echo "Displaying currently logged in users:"
     who
     read -p "Press [Enter] key to return to main menu..."
 }
 
-display_running_processes() {
+network_capture() {
     echo "Displaying running processes:"
     ps aux
     read -p "Press [Enter] key to return to main menu..."
 }
 
-display_last_boot() {
+local_login() {
     echo "Displaying last system boot:"
     who -b
     read -p "Press [Enter] key to return to main menu..."
 }
 
-display_kernel_version() {
+ssh_auths() {
     echo "Displaying kernel version:"
     uname -r
     read -p "Press [Enter] key to return to main menu..."
 }
 
-display_hostname() {
+failed_ssh_auths() {
     echo "Displaying hostname:"
     hostname
     read -p "Press [Enter] key to return to main menu..."
 }
 
-display_current_directory() {
-    echo "Displaying current directory:"
-    pwd
+bash_history() {
+    tail -n 20 ~/.bash_history
     read -p "Press [Enter] key to return to main menu..."
 }
 
