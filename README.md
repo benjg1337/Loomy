@@ -25,8 +25,8 @@ Run the following command for easy install ideally within /opt, or manually down
 | Option 3      | Utilize netstat to show outbound open UDP & TCP ports |
 | Option 4      | Displays the current running kernel version |
 | Option 5      | Displays current Distro version / OS version |
-| Option 6      | Description 6 |
-| Option 7      | Description 7 |
+| Option 6      | List altered files within the /Home /opt directories in the last 7 days|
+| Option 7      | List recently installed packages |
 | Option 8      | Description 8 |
 | Option 9      | Description 9 |
 | Option 10     | Print out of last 7 days of local logins |
