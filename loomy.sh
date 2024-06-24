@@ -10,7 +10,7 @@ show_ascii_art() {
     echo "                              /____/   "
 }
 
-# Function to display the menu
+# Function to display the menu -- CHANGE MENU SYSTEM TO LINUX CENTRIC CLASSICAL INSTEAD OF SELECTIONAL
 show_menu() {
     echo "1) Option 1: Show System Information"
     echo "2) Option 2: Show Crontab (Scheduled tasks)"
