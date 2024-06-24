@@ -18,19 +18,19 @@ Run the following command for easy install, or manually download and run.
 ``` git clone https://github.com/benjg1337/Loomy.git && cd Loomy && chmod +x build.sh && ./build.sh```
 
 ## Menu Options
-| Option        | Description   |
+| Option        | Return        |
 | ------------- | ------------- |
-| Option 1      | Description 1 |
-| Option 2      | Description 2 |
-| Option 3      | Description 3 |
-| Option 4      | Description 4 |
-| Option 5      | Description 5 |
+| Option 1      | Current uptime of the machine running |
+| Option 2      | Crontab (shows current scheduled tasks for user) |
+| Option 3      | Utilize netstat to show outbound open UDP & TCP ports |
+| Option 4      | Displays the current running kernel version |
+| Option 5      | Displays current Distro version / OS version |
 | Option 6      | Description 6 |
 | Option 7      | Description 7 |
 | Option 8      | Description 8 |
 | Option 9      | Description 9 |
 | Option 10     | Description 10|
-| Option 11     | Description 11|
-| Option 12     | Description 12|
-| Option 13     | Description 13|
-| Option 14     | Description 14|
+| Option 11     | Reads through journalctl, pulls SSH logins |
+| Option 12     | Reads through journalctl, pulls failed SSH login attempts |
+| Option 13     | Pulls the last 50 lines of history from ~/.bash_history |
+| Option 14     | Escape clause |
