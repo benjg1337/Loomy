@@ -44,6 +44,8 @@ Loomy is the ideal tool for scraping through the complexities of a Unix file sys
 
 This tool aims to streamline the way we interact with the core utilites within the Unix file strucutre, as well as logging functions such as journalctl, dot files, authentication logs and permissions to create a cohesive idea of what is occuring on a Unix derived based endpoint or server.
 
+In essence this aims to be a swiss army knife of useful scripts to really drill down into what is happening within the operating system, for those less confident within the command line. 
+
 ## License 
 
 As can be seen in the License.md file above, Loomy operates under the [MIT](https://opensource.org/license/mit) open source license. 
