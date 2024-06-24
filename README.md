@@ -18,7 +18,7 @@ Run the following command for easy install ideally within /Opt, or manually down
 ``` git clone https://github.com/benjg1337/Loomy.git && cd Loomy && chmod +x build.sh && ./build.sh```
 
 ### Requirements
-This tool will enumerate through directories within linux file structures within bash, therefore it should work on most modern linux ditros & MacOS. The build file is created for Bash and ZSH, if anything else is used, please manually source the script into your configuration file. 
+This tool will enumerate through directories within linux file structures using bash. It should work on most modern GNU/Linux ditros & MacOS (As long as the core-utils are present). The build file is created for Bash and ZSH, if anything else is used, please manually source the script into your configuration file. 
 
 ## Menu Options
 | Option        | Return        |
