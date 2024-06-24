@@ -42,6 +42,8 @@ ssh_failed_logins=$(journalctl -u ssh | grep 'sshd.*Failed password' | tail -n 2
 # show all installed packages on Arch Debian or RHEL based distros 
 head -n 200 /var/log/apt/history.log 2>/dev/null | grep -oP 'Commandline: \K.*' ; head -n 200 /var/log/apt/yum.log 2>/dev/null | grep -oP 'Commandline: \K.*' ; head -n 200 /var/log/apt/dnf.log 2>/dev/null | grep -oP 'Commandline: \K.*' ; head -n 200 /var/log/apt/pacman.log 2>/dev/null | grep -oP 'Commandline: \K.*'
 
+# show all running Docker and Podman containers 
+(command -v docker &>/dev/null && docker ps) || (command -v podman &>/dev/null && podman ps)
 
 #Results with nice formatting
 echo "====================================="
