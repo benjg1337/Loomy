@@ -21,22 +21,22 @@ Run the following command for easy install ideally within /Opt, or manually down
 This tool will enumerate through directories within linux file structures using bash. It should work on most modern GNU/Linux ditros & MacOS (as long as the GNU / Unix core-utils are present as this will likely not work with Busybox). The build file is created for Bash and ZSH, if anything else is used, please manually source the script into your configuration file. 
 
 ## Menu Options
-| Option        | Return        |
+| Loomyscript   | Return       |
 | ------------- | ------------- |
-| Option 1      | Current uptime of the machine running |
-| Option 2      | Crontab (shows current scheduled tasks for user) |
-| Option 3      | Utilize netstat to show outbound open UDP & TCP ports |
-| Option 4      | Displays the current running kernel version |
-| Option 5      | Displays current Distro version / OS version |
-| Option 6      | List altered files within the /Home /Opt directories in the last 7 days|
-| Option 7      | List recently installed packages |
-| Option 8      | List currenctly running Docker or Podman containers |
-| Option 9      | Create formatted network connection capture (60 seconds) |
-| Option 10     | Print out of last 7 days of local logins |
-| Option 11     | Reads through journalctl, pulls SSH logins |
-| Option 12     | Reads through journalctl, pulls failed SSH login attempts |
-| Option 13     | Pulls the last 50 lines of history from ~/.bash_history |
-| Option 14     | Escape clause |
+| Script 1      | Current uptime of the machine running |
+| Script 2      | Crontab (shows current scheduled tasks for user) |
+| Script 3      | Utilize netstat to show outbound open UDP & TCP ports |
+| Script 4      | Displays the current running kernel version |
+| Script 5      | Displays current Distro version / OS version |
+| Script 6      | List altered files within the /Home /Opt directories in the last 7 days|
+| Script 7      | List recently installed packages |
+| Script 8      | List currenctly running Docker or Podman containers |
+| Script 9      | Create formatted network connection capture (60 seconds) |
+| Script 10     | Print out of last 7 days of local logins |
+| Script 11     | Reads through journalctl, pulls SSH logins |
+| Script 12     | Reads through journalctl, pulls failed SSH login attempts |
+| Script 13     | Pulls the last 50 lines of history from ~/.bash_history |
+| Script 14     | Escape clause |
 
 ## Use Cases
 
