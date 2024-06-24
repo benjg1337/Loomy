@@ -27,7 +27,7 @@ Run the following command for easy install ideally within /Opt, or manually down
 | Option 5      | Displays current Distro version / OS version |
 | Option 6      | List altered files within the /Home /Opt directories in the last 7 days|
 | Option 7      | List recently installed packages |
-| Option 8      | Description 8 |
+| Option 8      | List currenctly running Docker or Podman containers |
 | Option 9      | Description 9 |
 | Option 10     | Print out of last 7 days of local logins |
 | Option 11     | Reads through journalctl, pulls SSH logins |
