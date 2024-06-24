@@ -34,3 +34,5 @@ Run the following command for easy install ideally within /Opt, or manually down
 | Option 12     | Reads through journalctl, pulls failed SSH login attempts |
 | Option 13     | Pulls the last 50 lines of history from ~/.bash_history |
 | Option 14     | Escape clause |
+
+## Usecases
