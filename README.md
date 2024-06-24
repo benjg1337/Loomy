@@ -8,7 +8,7 @@ _  /___/ /_/ / /_/ /  / / / / /  /_/ /
 ```
 Linux IR tool that illuminates that way weary cyber security analysts. 
 
-# Loomy - Cyber Security Incident Response Tool
+# Loomy - Cyber Security Incident Response Tool (Unix/Linux)
 
 Loomy is a command-line tool designed for cyber security incident response tasks. It provides various utilities to gather system information and monitor activities.
 
