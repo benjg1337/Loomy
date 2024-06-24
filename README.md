@@ -29,7 +29,7 @@ Run the following command for easy install ideally within /opt, or manually down
 | Option 7      | Description 7 |
 | Option 8      | Description 8 |
 | Option 9      | Description 9 |
-| Option 10     | Description 10|
+| Option 10     | Print out of last 7 days of local logins |
 | Option 11     | Reads through journalctl, pulls SSH logins |
 | Option 12     | Reads through journalctl, pulls failed SSH login attempts |
 | Option 13     | Pulls the last 50 lines of history from ~/.bash_history |
