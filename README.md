@@ -6,7 +6,7 @@ _  /___/ /_/ / /_/ /  / / / / /  /_/ /
 /_____/\____/\____//_/ /_/ /_/_\__, /  
                               /____/   
 ```
-Linux IR tool that illuminates the way for weary cyber security analysts. 
+Unix & GNU/Linux IR tool that illuminates the way for weary cyber security analysts. 
 
 # Loomy - Cyber Security Incident Response Tool (Unix & GNU/Linux)
 
