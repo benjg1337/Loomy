@@ -52,3 +52,9 @@ else
     echo "$logins"
 fi
 
+# list all containers installed on machine
+{ command -v docker &> /dev/null && echo "Docker is installed" && docker ps; } || echo "Docker is not installed"; { command -v podman &> /dev/null && echo "Podman is installed" && podman ps; } || echo "Podman is not installed"
+
+#show file modifications
+find /home /opt -type f -mtime -7 -exec ls -l {} +
+
