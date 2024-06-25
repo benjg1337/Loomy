@@ -36,7 +36,7 @@ history_output=$(tail -n 50 ~/.bash_history)
 # Read accepted password logins from journalctl
 ssh_logins=$(journalctl -u ssh | grep 'sshd.*Accepted password' | tail -n 20)
 
-# Read accepted password logins from journalctl
+# Read failed password logins from journalctl
 ssh_failed_logins=$(journalctl -u ssh | grep 'sshd.*Failed password' | tail -n 20)
 
 # show all installed packages on Arch Debian or RHEL based distros 
