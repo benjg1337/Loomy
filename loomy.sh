@@ -116,8 +116,7 @@ distro_version() {
 
 directory_changes() {
     clear
-    echo "Displaying free memory:"
-    free -h
+    find /home /opt -type f -mtime -7 -exec ls -l {} +
     read -p "Press [Enter] key to return to main menu..."
 }
 
@@ -129,8 +128,7 @@ installed_packages() {
 
 list_containers() {
     clear
-    echo "Displaying currently logged in users:"
-    who
+    { command -v docker &> /dev/null && echo "Docker is installed" && docker ps; } || echo "Docker is not installed"; { command -v podman &> /dev/null && echo "Podman is installed" && podman ps; } || echo "Podman is not installed"
     read -p "Press [Enter] key to return to main menu..."
 }
 
@@ -150,15 +148,13 @@ local_login() {
 
 ssh_auths() {
     clear
-    echo "Displaying kernel version:"
-    uname -r
+    journalctl -u ssh | grep 'sshd.*Failed password' | tail -n 20
     read -p "Press [Enter] key to return to main menu..."
 }
 
 failed_ssh_auths() {
     clear
-    echo "Displaying hostname:"
-    hostname
+    journalctl -u ssh | grep 'sshd.*Failed password' | tail -n 20
     read -p "Press [Enter] key to return to main menu..."
 }
 
