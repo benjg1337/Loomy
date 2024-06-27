@@ -34,7 +34,7 @@ This tool will enumerate through directories within linux file structures using 
 | -i, --installed-packages | List recently installed packages |
 | -lv, --list-virtuals     | List currenctly running Docker or Podman containers |
 | Script 9                 | Create formatted network connection capture (60 seconds) |
-| Script 10                | Print out of last 7 days of local logins |
+| -ll, --local-logins      | Print out of last 7 days of local logins |
 | -al, --accepted-logins   | Reads through journalctl, pulls SSH logins |
 | -fl, --failed-logins     | Reads through journalctl, pulls failed SSH login attempts |
 | -h, --history            | Pulls the last 50 lines of history from ~/.bash_history |
