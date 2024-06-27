@@ -15,7 +15,7 @@ show_splash() {
 
 # Function to display the help message
 show_help() {
-    echo "Usage: $(basename "$0") [OPTION]..."
+    echo "Usage: $(loomy "$0") [OPTION]..."
     echo " ______  "
     echo " ___  / ___________________ ________  __"
     echo " __  /  _  __ \  __ \_  __ \`__ \_  / / /  ------------------------"
@@ -46,7 +46,7 @@ show_help() {
 
 # Function to display the version information
 show_version() {
-    echo "$(basename "$0") version 1.2.1"
+    echo "$(loomy "$0") version 1.2.1"
     exit 0
 }
 
