@@ -30,8 +30,8 @@ show_help() {
     echo "  -af, --altered-files    List altered files within the /Home /Opt directories in the last 7 days"
     echo "  -i, --installed-packages    List recently installed packages"
     echo "  -lv, --list-virtuals    List currenctly running Docker or Podman containers"
-    echo "  -ll, --local-logins    Create formatted network connection capture (60 seconds)"
-    echo "  -o10, --option10  Print out of last 7 days of local logins"
+    echo "  -09    Create formatted network connection capture (60 seconds)"
+    echo "  -ll, --local-logins  Print out of last 7 days of local logins"
     echo "  -al, --accepted-logins  Reads through journalctl, pulls SSH logins"
     echo "  -fl, --failed-logins  Reads through journalctl, pulls failed SSH login attempts"
     echo "  -h, --history  Pulls the last 50 lines of history from ~/.bash_history"
@@ -54,8 +54,8 @@ option5() { cat /etc/*release | grep PRETTY_NAME | cut -d "=" -f 2- | tr -d '"';
 option6() { find /home /opt -type f -mtime -7 -exec ls -l {} +; exit 0; }
 option7() { head -n 200 /var/log/apt/history.log 2>/dev/null | grep -oP 'Commandline: \K.*' ; head -n 200 /var/log/apt/yum.log 2>/dev/null | grep -oP 'Commandline: \K.*' ; head -n 200 /var/log/apt/dnf.log 2>/dev/null | grep -oP 'Commandline: \K.*' ; head -n 200 /var/log/apt/pacman.log 2>/dev/null | grep -oP 'Commandline: \K.*'; exit 0; }
 option8() {(command -v docker &>/dev/null && docker ps) || (command -v podman &>/dev/null && podman ps); exit 0; }
-option9() { [ -z "$logins" ] && echo "No users have logged in within the last 7 days." || echo "$logins"; exit 0; }
-option10() { echo "Performing option 10"; exit 0; }
+option9() { ; exit 0; }
+option10() { [ -z "$logins" ] && echo "No users have logged in within the last 7 days." || echo "$logins"; exit 0; }
 option11() { journalctl -u ssh | grep 'sshd.*Accepted password' | tail -n 20; exit 0; }
 option12() { journalctl -u ssh | grep 'sshd.*Failed password' | tail -n 20; exit 0; }
 option13() { tail -n 50 ~/.bash_history; exit 0; }
