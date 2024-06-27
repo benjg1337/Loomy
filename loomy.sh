@@ -36,8 +36,6 @@ show_help() {
     echo "  -o11, --option11  Reads through journalctl, pulls SSH logins"
     echo "  -o12, --option12  Reads through journalctl, pulls failed SSH login attempts"
     echo "  -o13, --option13  Pulls the last 50 lines of history from ~/.bash_history"
-    echo "  -o14, --option14  Perform option 14"
-    echo "  -o15, --option15  Perform option 15"
     echo
     exit 0
 }
@@ -120,12 +118,6 @@ while [[ "$#" -gt 0 ]]; do
             ;;
         -o13|--option13)
             option13
-            ;;
-        -o14|--option14)
-            option14
-            ;;
-        -o15|--option15)
-            option15
             ;;
         *)
             echo "Unknown option: $1"
