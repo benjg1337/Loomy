@@ -28,7 +28,7 @@ show_help() {
     echo "  -kv, --kernel-version    Displays the current running kernel version"
     echo "  -dv, --distro-version    Displays current Distro version / OS version"
     echo "  -af, --altered-files    List altered files within the /Home /Opt directories in the last 7 days"
-    echo "  -o7, --option7    List recently installed packages"
+    echo "  -i, --installed-packages    List recently installed packages"
     echo "  -o8, --option8    List currenctly running Docker or Podman containers"
     echo "  -o9, --option9    Create formatted network connection capture (60 seconds)"
     echo "  -o10, --option10  Print out of last 7 days of local logins"
