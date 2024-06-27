@@ -1,174 +1,136 @@
 #!/bin/bash
 
-# Function to display the ASCII art message
-show_ascii_art() {
-    echo "______                                 "
-    echo "___  / ___________________ ________  __"
-    echo "__  /  _  __ \  __ \_  __ \__ \_  / / /"
-    echo "_  /___/ /_/ / /_/ /  / / / / /  /_/ / "
-    echo "/_____/\____/\____//_/ /_/ /_/_\__, /  "
-    echo "                              /____/   "
+# Function to display the splash screen
+show_splash() {
+    echo " ______  "
+    echo " ___  / ___________________ ________  __"
+    echo " __  /  _  __ \  __ \_  __ \`__ \_  / / /  ------------------------"
+    echo " _  /___/ /_/ / /_/ /  / / / / /  /_/ /   ------------ "
+    echo " /_____/\____/\____//_/ /_/ /_/_\__, /   -------------------"
+    echo "                               /____/   -------------------------------- "
+    ;;
+    echo "Run with -h or --help to see usage information."
+    echo
+    exit 0
 }
 
-# Function to display the menu -- CHANGE MENU SYSTEM TO LINUX CENTRIC CLASSICAL INSTEAD OF SELECTIONAL
-show_menu() {
-    echo "1) Option 1: Show System Information"
-    echo "2) Option 2: Show Crontab (Scheduled tasks)"
-    echo "3) Option 3: Current open and used ports via Netstat"
-    echo "4) Option 4: Running kernel version"
-    echo "5) Option 5: OS Version installed"
-    echo "6) Option 6: Altered files in /Home & /Opt"
-    echo "7) Option 7: Recently Installed Packages"
-    echo "8) Option 8: List Running Docker/Podman containers"
-    echo "9) Option 9: Formatted packet capture (60 seconds)"
-    echo "10) Option 10: Last 7 days of local logins"
-    echo "11) Option 11: "
-    echo "12) Option 12: "
-    echo "13) Option 13: Last 20 lines of command history"
-    echo "14) Option 14: Exit"
+# Function to display the help message
+show_help() {
+    echo "Usage: $(basename "$0") [OPTION]..."
+    echo "Loomy - A Unix & GNU/Linux IR tool that illuminates the way for weary cyber security analysts."
+    echo
+    echo "Options:"
+    echo "  -h, --help        Show this help message and exit"
+    echo "  -v, --version     Show the version information"
+    echo "  -l, --list        List items"
+    echo "  -o1, --option1    Current uptime of the machine running"
+    echo "  -o2, --option2    Crontab (shows current scheduled tasks for user)"
+    echo "  -o3, --option3    Utilize netstat to show outbound open UDP & TCP ports"
+    echo "  -o4, --option4    Displays the current running kernel version"
+    echo "  -o5, --option5    Displays current Distro version / OS version"
+    echo "  -o6, --option6    List altered files within the /Home /Opt directories in the last 7 days"
+    echo "  -o7, --option7    List recently installed packages"
+    echo "  -o8, --option8    List currenctly running Docker or Podman containers"
+    echo "  -o9, --option9    Create formatted network connection capture (60 seconds)"
+    echo "  -o10, --option10  Print out of last 7 days of local logins"
+    echo "  -o11, --option11  Reads through journalctl, pulls SSH logins"
+    echo "  -o12, --option12  Reads through journalctl, pulls failed SSH login attempts"
+    echo "  -o13, --option13  Pulls the last 50 lines of history from ~/.bash_history"
+    echo "  -o14, --option14  Perform option 14"
+    echo "  -o15, --option15  Perform option 15"
+    echo
+    exit 0
 }
 
-# Function to handle user input and perform actions
-read_input() {
-    local choice
-    read -p "Enter choice [1-14]: " choice
-    case $choice in
-        1)
-            system_info
+# Function to display the version information
+show_version() {
+    echo "$(basename "$0") version 1.2.1"
+    exit 0
+}
+
+# Placeholder functions for each option
+option1() { uptime ; exit 0; }
+option2() { crontab -l 2>&1; exit 0; }
+option3() { netstat -tulpn; exit 0; }
+option4() { uname -r; exit 0; }
+option5() { cat /etc/*release | grep PRETTY_NAME | cut -d "=" -f 2- | tr -d '"'; exit 0; }
+option6() { find /home /opt -type f -mtime -7 -exec ls -l {} +; exit 0; }
+option7() { echo "Performing option 7"; exit 0; }
+option8() {(command -v docker &>/dev/null && docker ps) || (command -v podman &>/dev/null && podman ps); exit 0; }
+option9() { echo "Performing option 9"; exit 0; }
+option10() { echo "Performing option 10"; exit 0; }
+option11() { journalctl -u ssh | grep 'sshd.*Accepted password' | tail -n 20; exit 0; }
+option12() { journalctl -u ssh | grep 'sshd.*Failed password' | tail -n 20; exit 0; }
+option13() { tail -n 50 ~/.bash_history; exit 0; }
+option14() { echo "Performing option 14"; exit 0; }
+option15() { echo "Performing option 15"; exit 0; }
+
+# Parse command-line arguments
+if [[ "$#" -eq 0 ]]; then
+    show_splash
+fi
+
+while [[ "$#" -gt 0 ]]; do
+    case "$1" in
+        -h|--help)
+            show_help
             ;;
-        2)
-            show_crontab
+        -v|--version)
+            show_version
             ;;
-        3)
-            netstat_output
-            ;;
-        4)
-            kernel_version
-            ;;
-        5)
-            distro_version
-            ;;
-        6)
-            directory_changes
-            ;;
-        7)
-            installed_packages
-            ;;
-        8)
-            list_containers
-            ;;
-        9)
-            network_capture
-            ;;
-        10)
-            local_logins
-            ;;
-        11)
-            ssh_auths
-            ;;
-        12)
-            failed_ssh_auths
-            ;;
-        13)
-            bash_history
-            ;;
-        14)
-            echo "Exiting..."
+        -l|--list)
+            echo "Listing items..."
             exit 0
             ;;
+        -o1|--option1)
+            option1
+            ;;
+        -o2|--option2)
+            option2
+            ;;
+        -o3|--option3)
+            option3
+            ;;
+        -o4|--option4)
+            option4
+            ;;
+        -o5|--option5)
+            option5
+            ;;
+        -o6|--option6)
+            option6
+            ;;
+        -o7|--option7)
+            option7
+            ;;
+        -o8|--option8)
+            option8
+            ;;
+        -o9|--option9)
+            option9
+            ;;
+        -o10|--option10)
+            option10
+            ;;
+        -o11|--option11)
+            option11
+            ;;
+        -o12|--option12)
+            option12
+            ;;
+        -o13|--option13)
+            option13
+            ;;
+        -o14|--option14)
+            option14
+            ;;
+        -o15|--option15)
+            option15
+            ;;
         *)
-            echo "Invalid choice, please try again."
+            echo "Unknown option: $1"
+            show_help
             ;;
     esac
-}
-
-# Functions for each menu option
-system_info() {
-    clear
-    uptime && grep MemTotal /proc/meminfo | awk '{print $2/1024/1024 " GB"}' 
-    read -p "Press [Enter] key to return to main menu..."
-}
-
-show_crontab() {
-    clear
-    crontab -l 2>&1
-    read -p "Press [Enter] key to return to main menu..."
-}
-
-netstat_output() {
-    clear
-    netstat -tulpn
-    read -p "Press [Enter] key to return to main menu..."
-}
-
-kernel_version() {
-    clear
-    uname -r 
-    read -p "Press [Enter] key to return to main menu..."
-}
-
-distro_version() {
-    clear
-    echo "Current distro being ran:"
-    cat /etc/*release | grep PRETTY_NAME | cut -d "=" -f 2- | tr -d '"'
-    read -p "Press [Enter] key to return to main menu..."
-}
-
-directory_changes() {
-    clear
-    find /home /opt -type f -mtime -7 -exec ls -l {} +
-    read -p "Press [Enter] key to return to main menu..."
-}
-
-installed_packages() {
-    clear
-    head -n 200 /var/log/apt/history.log 2>/dev/null | grep -oP 'Commandline: \K.*' ; head -n 200 /var/log/apt/yum.log 2>/dev/null | grep -oP 'Commandline: \K.*' ; head -n 200 /var/log/apt/dnf.log 2>/dev/null | grep -oP 'Commandline: \K.*' ; head -n 200 /var/log/apt/pacman.log 2>/dev/null | grep -oP 'Commandline: \K.*'
-    read -p "Press [Enter] key to return to main menu..."
-}
-
-list_containers() {
-    clear
-    { command -v docker &> /dev/null && echo "Docker is installed" && docker ps; } || echo "Docker is not installed"; { command -v podman &> /dev/null && echo "Podman is installed" && podman ps; } || echo "Podman is not installed"
-    read -p "Press [Enter] key to return to main menu..."
-}
-
-network_capture() {
-    clear
-    echo "Displaying running processes:"
-    ps aux
-    read -p "Press [Enter] key to return to main menu..."
-}
-
-local_login() {
-    clear
-    echo "Displaying last system boot:"
-    who -b
-    read -p "Press [Enter] key to return to main menu..."
-}
-
-ssh_auths() {
-    clear
-    journalctl -u ssh | grep 'sshd.*Failed password' | tail -n 20
-    read -p "Press [Enter] key to return to main menu..."
-}
-
-failed_ssh_auths() {
-    clear
-    journalctl -u ssh | grep 'sshd.*Failed password' | tail -n 20
-    read -p "Press [Enter] key to return to main menu..."
-}
-
-bash_history() {
-    clear
-    tail -n 20 ~/.bash_history
-    read -p "Press [Enter] key to return to main menu..."
-}
-
-# Main loop to display the menu until the user chooses to exit
-while true; do
-    clear
-    show_ascii_art
-    show_menu
-    read_input
-    echo ""
+    shift
 done
