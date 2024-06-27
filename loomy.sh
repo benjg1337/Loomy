@@ -59,8 +59,6 @@ option10() { echo "Performing option 10"; exit 0; }
 option11() { journalctl -u ssh | grep 'sshd.*Accepted password' | tail -n 20; exit 0; }
 option12() { journalctl -u ssh | grep 'sshd.*Failed password' | tail -n 20; exit 0; }
 option13() { tail -n 50 ~/.bash_history; exit 0; }
-option14() { echo "Performing option 14"; exit 0; }
-option15() { echo "Performing option 15"; exit 0; }
 
 # Parse command-line arguments
 if [[ "$#" -eq 0 ]]; then
