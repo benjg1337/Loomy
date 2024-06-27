@@ -32,7 +32,7 @@ This tool will enumerate through directories within linux file structures using 
 | -dv, --distro-version    | Displays current Distro version / OS version |
 | -af, --altered-files     | List altered files within the /Home /Opt directories in the last 7 days|
 | -i, --installed-packages | List recently installed packages |
-| Script 8                 | List currenctly running Docker or Podman containers |
+| -lv, --list-virtuals     | List currenctly running Docker or Podman containers |
 | Script 9                 | Create formatted network connection capture (60 seconds) |
 | Script 10                | Print out of last 7 days of local logins |
 | -al, --accepted-logins   | Reads through journalctl, pulls SSH logins |
