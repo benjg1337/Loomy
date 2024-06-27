@@ -27,7 +27,7 @@ show_help() {
     echo "  -pi, --port-info    Utilize netstat to show outbound open UDP & TCP ports"
     echo "  -kv, --kernel-version    Displays the current running kernel version"
     echo "  -dv, --distro-version    Displays current Distro version / OS version"
-    echo "  -o6, --option6    List altered files within the /Home /Opt directories in the last 7 days"
+    echo "  -af, --altered-files    List altered files within the /Home /Opt directories in the last 7 days"
     echo "  -o7, --option7    List recently installed packages"
     echo "  -o8, --option8    List currenctly running Docker or Podman containers"
     echo "  -o9, --option9    Create formatted network connection capture (60 seconds)"
