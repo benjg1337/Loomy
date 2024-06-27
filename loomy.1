@@ -18,7 +18,35 @@ DESCRIPTION
   less confident within the command line.
   
 OPTIONS
-  explain/list parameters and arguments
+  -h, --help	Shows the help page
+  
+  -v, --version	Provides the current running version
+  
+  -ut, --up-time	Current uptime of the machine running
+  
+  -ct, --cron-tab	Crontab (shows current scheduled tasks for user)
+  
+  -pi, --port-info	Utilize netstat to show outbound open UDP & TCP ports
+  
+  -kv, --kernel-version	Displays the current running kernel version
+  
+  -dv, --distro-version	Displays current Distro version / OS version
+  
+  -af, --altered-files	List altered files within the /Home /Opt directories in the last 7 days
+  
+  -i, --installed-packages	List recently installed packages
+  
+  -lv, --list-virtuals	List currenctly running Docker or Podman containers
+  
+  -nc, --network-cap	Create formatted network connection capture (60 seconds)
+  
+  -ll, --local-logins	Print out of last 7 days of local logins
+  
+  -al, --accepted-logins	Reads through journalctl, pulls SSH logins
+  
+  -fl, --failed-logins	Reads through journalctl, pulls failed SSH login attempts
+  
+  -h, --history	Pulls the last 50 lines of history from ~/.bash_history
   
 EXAMPLES
   usage examples
