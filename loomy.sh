@@ -16,6 +16,12 @@ show_splash() {
 # Function to display the help message
 show_help() {
     echo "Usage: $(basename "$0") [OPTION]..."
+    echo " ______  "
+    echo " ___  / ___________________ ________  __"
+    echo " __  /  _  __ \  __ \_  __ \`__ \_  / / /  ------------------------"
+    echo " _  /___/ /_/ / /_/ /  / / / / /  /_/ /   ------------ "
+    echo " /_____/\____/\____//_/ /_/ /_/_\__, /   -------------------"
+    echo "                               /____/   -------------------------------- "
     echo "Loomy - A Unix & GNU/Linux IR tool that illuminates the way for weary cyber security analysts."
     echo
     echo "Options:"
