@@ -22,7 +22,6 @@ show_help() {
     echo "Options:"
     echo "  -h, --help        Show this help message and exit"
     echo "  -v, --version     Show the version information"
-    echo "  -l, --list        List items"
     echo "  -ut, --up-time   Current uptime of the machine running"
     echo "  -ct, --cron-tab    Crontab (shows current scheduled tasks for user)"
     echo "  -pi, --port-info    Utilize netstat to show outbound open UDP & TCP ports"
@@ -75,10 +74,6 @@ while [[ "$#" -gt 0 ]]; do
             ;;
         -v|--version)
             show_version
-            ;;
-        -l|--list)
-            echo "Listing items..."
-            exit 0
             ;;
         -o1|--option1)
             option1
