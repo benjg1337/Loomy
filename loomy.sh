@@ -71,43 +71,43 @@ while [[ "$#" -gt 0 ]]; do
         -v|--version)
             show_version
             ;;
-        -o1|--option1)
+        -ut|--up-time)
             option1
             ;;
-        -o2|--option2)
+        -ct|--cron-tab)
             option2
             ;;
-        -o3|--option3)
+        -pi|--port-info)
             option3
             ;;
-        -o4|--option4)
+        -kv|--kernel-version)
             option4
             ;;
-        -o5|--option5)
+        -dv|--distro-version)
             option5
             ;;
-        -o6|--option6)
+        -af|--altered-files)
             option6
             ;;
-        -o7|--option7)
+        -i|--installed-packages)
             option7
             ;;
-        -o8|--option8)
+        -lv|--list-virtuals)
             option8
             ;;
         -o9|--option9)
             option9
             ;;
-        -o10|--option10)
+        -ll|--local-logins)
             option10
             ;;
-        -o11|--option11)
+        -al|--accepted-logins)
             option11
             ;;
-        -o12|--option12)
+        -fl|--failed-logins)
             option12
             ;;
-        -o13|--option13)
+        -h|--history)
             option13
             ;;
         *)
