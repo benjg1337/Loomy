@@ -23,8 +23,8 @@ This tool will enumerate through directories within linux file structures using 
 ## Menu Options
 | Loomyscript              | Return       |
 | -------------------------| ------------- |
-| -h --help                | Shows the help page |
-| -v --version             | Provides the current running version |
+| -h, --help                | Shows the help page |
+| -v, --version             | Provides the current running version |
 | -ut, --up-time           | Current uptime of the machine running |
 | -ct, --cron-tab          | Crontab (shows current scheduled tasks for user) |
 | -pi, --port-info         | Utilize netstat to show outbound open UDP & TCP ports |
