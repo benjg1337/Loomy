@@ -40,12 +40,11 @@ else
   exit 1
 fi
 
-# Compress the man page using tar
+#Compress man page
 echo "Compressing $MAN_PAGE_NAME..."
-tar -cvf "$MAN_DIR/$MAN_PAGE_NAME.tar" -C "$MAN_DIR" "$MAN_PAGE_NAME"
+gzip "$MAN_DIR/$MAN_PAGE_NAME"
 if [ $? -eq 0 ]; then
-  rm "$MAN_DIR/$MAN_PAGE_NAME"
-  echo "$MAN_PAGE_NAME compressed and original file removed"
+  echo "$MAN_PAGE_NAME compressed to $MAN_PAGE_NAME.gz"
 else
   echo "Failed to compress $MAN_PAGE_NAME"
   exit 1
