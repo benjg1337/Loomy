@@ -52,7 +52,7 @@ option3() { netstat -tulpn; exit 0; }
 option4() { uname -r; exit 0; }
 option5() { cat /etc/*release | grep PRETTY_NAME | cut -d "=" -f 2- | tr -d '"'; exit 0; }
 option6() { find /home /opt -type f -mtime -7 -exec ls -l {} +; exit 0; }
-option7() { echo "Performing option 7"; exit 0; }
+option7() { head -n 200 /var/log/apt/history.log 2>/dev/null | grep -oP 'Commandline: \K.*' ; head -n 200 /var/log/apt/yum.log 2>/dev/null | grep -oP 'Commandline: \K.*' ; head -n 200 /var/log/apt/dnf.log 2>/dev/null | grep -oP 'Commandline: \K.*' ; head -n 200 /var/log/apt/pacman.log 2>/dev/null | grep -oP 'Commandline: \K.*'; exit 0; }
 option8() {(command -v docker &>/dev/null && docker ps) || (command -v podman &>/dev/null && podman ps); exit 0; }
 option9() { echo "Performing option 9"; exit 0; }
 option10() { echo "Performing option 10"; exit 0; }
