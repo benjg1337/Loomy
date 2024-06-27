@@ -21,23 +21,23 @@ Run the following command for easy install ideally within /Opt, or manually down
 This tool will enumerate through directories within linux file structures using bash. It should work on most modern GNU/Linux ditros & MacOS, (as long as the GNU / Unix core-utils are present, as this will likely not work with Busybox depending upon symlinks and aliases). The build file is created for Bash and ZSH, if anything else is used, please manually source the script into your configuration file. 
 
 ## Menu Options
-| Loomyscript            | Return       |
-| -----------------------| ------------- |
-| -h --help              | Shows the help page |
-| -v --version           | Provides the current running version |
-| -ut, --up-time         | Current uptime of the machine running |
-| -ct, --cron-tab        | Crontab (shows current scheduled tasks for user) |
-| -pi, --port-info       | Utilize netstat to show outbound open UDP & TCP ports |
-| -kv, --kernel-version  | Displays the current running kernel version |
-| -dv, --distro-version  | Displays current Distro version / OS version |
-| -af, --altered-files   | List altered files within the /Home /Opt directories in the last 7 days|
-| Script 7               | List recently installed packages |
-| Script 8               | List currenctly running Docker or Podman containers |
-| Script 9               | Create formatted network connection capture (60 seconds) |
-| Script 10              | Print out of last 7 days of local logins |
-| -al, --accepted-logins | Reads through journalctl, pulls SSH logins |
-| -fl, --failed-logins   | Reads through journalctl, pulls failed SSH login attempts |
-| -h, --history          | Pulls the last 50 lines of history from ~/.bash_history |
+| Loomyscript              | Return       |
+| -------------------------| ------------- |
+| -h --help                | Shows the help page |
+| -v --version             | Provides the current running version |
+| -ut, --up-time           | Current uptime of the machine running |
+| -ct, --cron-tab          | Crontab (shows current scheduled tasks for user) |
+| -pi, --port-info         | Utilize netstat to show outbound open UDP & TCP ports |
+| -kv, --kernel-version    | Displays the current running kernel version |
+| -dv, --distro-version    | Displays current Distro version / OS version |
+| -af, --altered-files     | List altered files within the /Home /Opt directories in the last 7 days|
+| -i, --installed-packages | List recently installed packages |
+| Script 8                 | List currenctly running Docker or Podman containers |
+| Script 9                 | Create formatted network connection capture (60 seconds) |
+| Script 10                | Print out of last 7 days of local logins |
+| -al, --accepted-logins   | Reads through journalctl, pulls SSH logins |
+| -fl, --failed-logins     | Reads through journalctl, pulls failed SSH login attempts |
+| -h, --history            | Pulls the last 50 lines of history from ~/.bash_history |
 
 ## Use Cases
 
