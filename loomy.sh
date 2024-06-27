@@ -8,7 +8,6 @@ show_splash() {
     echo " _  /___/ /_/ / /_/ /  / / / / /  /_/ /   ------------ "
     echo " /_____/\____/\____//_/ /_/ /_/_\__, /   -------------------"
     echo "                               /____/   -------------------------------- "
-    ;;
     echo "Run with -h or --help to see usage information."
     echo
     exit 0
