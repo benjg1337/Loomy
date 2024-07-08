@@ -35,7 +35,7 @@ show_help() {
     echo "  -af, --altered-files    List altered files within the /Home /Opt directories in the last 7 days"
     echo "  -i, --installed-packages    List recently installed packages"
     echo "  -lv, --list-virtuals    List currenctly running Docker or Podman containers"
-    echo "  -09    Create formatted network connection capture (60 seconds)"
+    echo "  -cf, --list-configs"
     echo "  -ll, --local-logins  Print out of last 7 days of local logins"
     echo "  -al, --accepted-logins  Reads through journalctl, pulls SSH logins"
     echo "  -fl, --failed-logins  Reads through journalctl, pulls failed SSH login attempts"
