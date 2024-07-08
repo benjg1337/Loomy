@@ -33,7 +33,7 @@ This tool will enumerate through directories within linux file structures using 
 | -af, --altered-files     | List altered files within the /Home /Opt directories in the last 7 days|
 | -i, --installed-packages | List recently installed packages |
 | -lv, --list-virtuals     | List currenctly running Docker or Podman containers |
-| -nc, --network-cap       | Create formatted network connection capture (60 seconds) |
+| -cf, --list-configs      | Lists all config files within the current userspace |
 | -ll, --local-logins      | Print out of last 7 days of local logins |
 | -al, --accepted-logins   | Reads through journalctl, pulls SSH logins |
 | -fl, --failed-logins     | Reads through journalctl, pulls failed SSH login attempts |
